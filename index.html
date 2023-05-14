@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js">
+    </script>
+
+    <script type="text/javascript" src="scripts/shCore.js"></script>
+    <script type="text/javascript" src="scripts/shBrushCpp.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/shCore.css" /> 
+    <link rel="stylesheet" type="text/css" href="styles/shThemeEmacs.css"/>
+
+
+    <script type="text/javascript">
+        SyntaxHighlighter.config.clipboardSwf = 'scripts/clipboard.swf';
+        SyntaxHighlighter.config.strings = {
+            expandSource : '展开代码',
+            viewSource : '查看代码',
+            copyToClipboard : '复制代码',
+            copyToClipboardConfirmation : '代码复制成功',
+            print : '打印',
+            help: '?',
+            alert: '语法高亮\n\n',
+            noBrush: '不能找到刷子: ',
+            brushNotHtmlScript: '刷子没有配置html-script选项',
+            aboutDialog: '<div></div>'
+        };
+        SyntaxHighlighter.all();
+    </script>
+
+</head>
+<body>
+    <p>你好，这是一个测试公式 \( A_1 \times A_2 \)
+    \( Gamma(z) = \int_0^\infty t{z-1}e{-t}dt,.\)
+
+    $$
+     A_2 \times A_4
+    $$
+    </p>
+
+    <div style="width: 100%;overflow: auto;white-space:nowrap">
+    <pre class="brush: cpp">
+    #include &lt;stdio.h &gt;
+
+    int main(void)
+    {
+        printf("hello syntaxhighter"); //这是一个注释测试这是一个注释测试这是一个注释测试这是一个注释测试这是一个注释测试这是一个注释测试这是一个注释测试这是一个注释测试
+        /*  这是一个多行注释    */
+        return 0;
+    }
+    </pre>
+   </div>
+</body>
+
+</html>
+
+
