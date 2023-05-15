@@ -26,7 +26,7 @@
 <meta property="og:description" content="目前语法分析方法主要有自顶向下和自底向上法，应用较为广泛的主要是自顶向下语法分析方法，主要有递归下降分析法、LL(k)、LR(k)和符号优先级法，本文主要介绍递归下降和符号优先级的语法分析方法。 四则运算符的文法描述四则运算表达式的BNF文法描述如下： 1234567891011&#x2F;* 包含左递归的BNF文法 *&#x2F;&lt;expr&gt; ::&#x3D; &lt;expr&gt; + &lt;term&amp;gt">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-05-14T14:02:36.000Z">
-<meta property="article:modified_time" content="2023-05-15T15:43:13.328Z">
+<meta property="article:modified_time" content="2023-05-15T15:43:44.491Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="编译原理">
 <meta name="twitter:card" content="summary">
@@ -225,7 +225,7 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-05-15 23:43:13</span>
+            <span class="desktop">2023-05-15 23:43:44</span>
             <span class="mobile">2023-05-15 23:43</span>
             <span class="hover-info">Updated</span>
         </span>
@@ -264,6 +264,9 @@
                 <p>目前语法分析方法主要有自顶向下和自底向上法，应用较为广泛的主要是自顶向下语法分析<br>方法，主要有递归下降分析法、LL(k)、LR(k)和符号优先级法，本文主要介绍递归下降和符号<br>优先级的语法分析方法。</p>
 <h2 id="四则运算符的文法描述"><a href="#四则运算符的文法描述" class="headerlink" title="四则运算符的文法描述"></a>四则运算符的文法描述</h2><p>四则运算表达式的BNF文法描述如下：</p>
 <div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 包含左递归的BNF文法 */</span></span><br><span class="line">&lt;expr&gt; ::= &lt;expr&gt; + &lt;term&gt;</span><br><span class="line">         | &lt;expr&gt; - &lt;term&gt;</span><br><span class="line">         | &lt;term&gt;</span><br><span class="line"></span><br><span class="line">&lt;term&gt; ::= &lt;term&gt; * &lt;factor&gt;</span><br><span class="line">         | &lt;term&gt; / &lt;factor&gt;</span><br><span class="line">         | &lt;factor&gt;</span><br><span class="line"></span><br><span class="line">&lt;factor&gt; ::= ( &lt;expr&gt; )</span><br><span class="line">           | Num</span><br></pre></td></tr></table></figure></div>
+
+<p>上述文法中包含了左递归的非终结符，在使用递归下降法进行解析四则运算表达式<br>时不能包含左递归，否则会进入无限循环。为了对左递归文法进行转换，需要引入<br>空终结符$\varepsilon$来表示非终结符的终结，转换后的BNF文法如下所示。</p>
+
             </div>
 
             
@@ -275,7 +278,7 @@
         <li><strong>Created at:</strong> 2023-05-14 22:02:36</li>
         
             <li>
-                <strong>Updated at:</strong> 2023-05-15 23:43:13
+                <strong>Updated at:</strong> 2023-05-15 23:43:44
             </li>
         
         <li>
